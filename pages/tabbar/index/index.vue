@@ -1,52 +1,26 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-	</view>
+	<view class="home"> 
+	你好
+	 <span class="world" @click="increment">跳转</span>
+	 <span style="margin-right:10upx;">{{count}}</span>
+	 <span>{{doubles}}</span>
+	 <span>num:{{num}}</span>
+	 </view>
 </template>
-
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+<script setup>
+	import {
+		onLoad,
+		onShow
+	} from "@dcloudio/uni-app";
+	import useData from './js/useGetData.js'
+	const {num,count,doubles,increment} = useData()
+	onLoad((options) => {
+		console.log('页面初始化')
+	});
+	onShow(() => {
+		console.log('页面出现时')
+	});
+	
 </script>
-
-<style>
-	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+<style lang="scss" src="./scss/index.scss">
 </style>

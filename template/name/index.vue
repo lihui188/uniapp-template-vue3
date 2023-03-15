@@ -52,6 +52,15 @@
 		// do something 
 		// 这里就是当 name或者name2 值发生变化时 ，就会执行此方法
 	})
+	
+	
+	// 对vuex中数据进行监听
+	// const username = computed(()=>{
+	// 	return store.state.user.username
+	// })
+	// watch(username, (newValue, oldValue) => {
+	// 	console.log(newValue)
+	// })
 </script>
 <style>
 </style>
